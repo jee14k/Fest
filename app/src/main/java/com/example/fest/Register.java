@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class Register extends AppCompatActivity {
     Button btnRegister;
+    Button dob;
     EditText editTextname;
     String editTextnameval;
     EditText editTextnum;
@@ -28,6 +29,7 @@ public class Register extends AppCompatActivity {
         editTextnum = (EditText) findViewById(R.id.editText2);
         editTextemail = (EditText) findViewById(R.id.editText3);
         editTextcoll = (EditText) findViewById(R.id.editText4);
+        dob = (Button) findViewById(R.id.button4);
     }
 
     public void btnClkReg(View v){
@@ -41,6 +43,11 @@ public class Register extends AppCompatActivity {
         i.putExtra("Value3",editTextemailval);
         editTextcollval = editTextcoll.getText().toString();
         i.putExtra("Value4",editTextcollval);
+        startActivity(i);
+        finish();
+    }
+    public void btndob(View v){
+        Intent i = new Intent(this,DobAct.class);
         startActivity(i);
         finish();
     }

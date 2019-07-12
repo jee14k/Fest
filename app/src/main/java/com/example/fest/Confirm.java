@@ -18,7 +18,7 @@ public class Confirm extends AppCompatActivity {
     String collval;
     Button btnBack;
     Button btex;
-    Button dob;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,6 @@ public class Confirm extends AppCompatActivity {
         setContentView(R.layout.activity_confirm);
         btnBack = (Button) findViewById(R.id.button2);
         btex = (Button) findViewById(R.id.button3);
-        dob = (Button) findViewById(R.id.button4);
         nametxt = (TextView) findViewById(R.id.textView11);
         mobiletxt = (TextView) findViewById(R.id.textView10);
         emailtxt = (TextView) findViewById(R.id.textView12);
@@ -53,11 +52,7 @@ public class Confirm extends AppCompatActivity {
         finish();
     }
 
-    public void btndob(View v){
-        Intent i = new Intent(this,DobAct.class);
-        startActivity(i);
-        finish();
-    }
+
 
 
 
