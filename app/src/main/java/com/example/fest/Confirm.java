@@ -4,11 +4,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Button;
 
 public class Confirm extends AppCompatActivity {
     TextView nametxt;
+    TextView ratingtxt;
     TextView mobiletxt;
     TextView emailtxt;
     TextView colltext;
@@ -18,12 +20,14 @@ public class Confirm extends AppCompatActivity {
     String collval;
     Button btnBack;
     Button btex;
+    RatingBar rating_b;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm);
+        listenerforRatingbar();
         btnBack = (Button) findViewById(R.id.button2);
         btex = (Button) findViewById(R.id.button3);
         nametxt = (TextView) findViewById(R.id.textView11);
@@ -52,6 +56,18 @@ public class Confirm extends AppCompatActivity {
         finish();
     }
 
+    public void listenerforRatingbar()
+    {
+        rating_b = (RatingBar) findViewById(R.id.ratingBar);
+        ratingtxt = (TextView) findViewById(R.id.textView17);
+        rating_b.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                ratingtxt.setText(String.valueOf(rating));
+            }
+        });
+
+    }
 
 
 
