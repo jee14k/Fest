@@ -3,12 +3,15 @@ package com.example.fest;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.app.ProgressDialog;
+import android.media.MediaPlayer;
 import android.content.Intent;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Button;
 
 public class Confirm extends AppCompatActivity {
+
     TextView nametxt;
     TextView ratingtxt;
     TextView mobiletxt;
@@ -20,6 +23,7 @@ public class Confirm extends AppCompatActivity {
     String collval;
     Button btnBack;
     Button btex;
+
     RatingBar rating_b;
 
 
@@ -28,6 +32,7 @@ public class Confirm extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirm);
         listenerforRatingbar();
+
         btnBack = (Button) findViewById(R.id.button2);
         btex = (Button) findViewById(R.id.button3);
         nametxt = (TextView) findViewById(R.id.textView11);
@@ -48,6 +53,8 @@ public class Confirm extends AppCompatActivity {
                 finish();
             }
         });
+
+
     }
 
     public void btnRet(View v){
